@@ -15,7 +15,6 @@ Summary(pl.UTF-8):	Biblioteka C do obsługi baz Berkeley DB
 Name:		db5.0
 Version:	%{ver}.%{patchlevel}
 Release:	1
-Epoch:		0
 License:	BSD-like (see LICENSE)
 Group:		Libraries
 Source0:	http://download.oracle.com/berkeley-db/db-%{ver}.tar.gz
@@ -53,7 +52,7 @@ Pythonie i Perlu.
 Summary:	Header files for Berkeley database library
 Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki Berkeley Database
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Provides:	db-devel = %{version}-%{release}
 Obsoletes:	db-devel
 Obsoletes:	db3-devel
@@ -85,7 +84,7 @@ programów używających Berkeley DB.
 Summary:	Static libraries for Berkeley database library
 Summary(pl.UTF-8):	Statyczne biblioteki Berkeley Database
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 Provides:	db-static = %{version}-%{release}
 Obsoletes:	db-static
 Obsoletes:	db3-static
@@ -130,8 +129,8 @@ Biblioteka baz danych Berkeley dla C++.
 Summary:	Header files for db-cxx library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki db-cxx
 Group:		Development/Libraries
-Requires:	%{name}-cxx = %{epoch}:%{version}-%{release}
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-cxx = %{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 Provides:	db-cxx-devel = %{version}-%{release}
 Obsoletes:	db-cxx-devel
 Conflicts:	db-devel < 4.1.25-3
@@ -146,7 +145,7 @@ Pliki nagłówkowe biblioteki db-cxx.
 Summary:	Static version of db-cxx library
 Summary(pl.UTF-8):	Statyczna wersja biblioteki db-cxx
 Group:		Development/Libraries
-Requires:	%{name}-cxx-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-cxx-devel = %{version}-%{release}
 Provides:	db-cxx-static = %{version}-%{release}
 Obsoletes:	db-cxx-static
 Conflicts:	db-static < 4.2.50-1
@@ -176,7 +175,7 @@ Biblioteka baz danych Berkeley dla Javy.
 Summary:	Development files for db-java library
 Summary(pl.UTF-8):	Pliki programistyczne biblioteki db-java
 Group:		Development/Languages/Java
-Requires:	%{name}-java = %{epoch}:%{version}-%{release}
+Requires:	%{name}-java = %{version}-%{release}
 Provides:	db-java-devel = %{version}-%{release}
 Obsoletes:	db-java-devel
 Conflicts:	db-devel < 4.1.25-3
@@ -205,7 +204,7 @@ Biblioteka baz danych Berkeley dla Tcl.
 Summary:	Development files for db-tcl library
 Summary(pl.UTF-8):	Pliki programistyczne biblioteki db-tcl
 Group:		Development/Languages/Tcl
-Requires:	%{name}-tcl = %{epoch}:%{version}-%{release}
+Requires:	%{name}-tcl = %{version}-%{release}
 Provides:	db-tcl-devel = %{version}-%{release}
 Obsoletes:	db-tcl-devel
 Conflicts:	db-devel < 4.1.25-3
@@ -232,53 +231,70 @@ Warstwa SQL dla biblioteki baz danych Berkeley.
 Summary:	Development files for db-sql library
 Summary(pl.UTF-8):	Pliki programistyczne biblioteki db-sql
 Group:		Development/Libraries
-Requires:	%{name}-sql = %{epoch}:%{version}-%{release}
+Requires:	%{name}-sql = %{version}-%{release}
 Provides:	db-sql-devel = %{version}-%{release}
 
 %description sql-devel
 Development files for db-sql library.
 
+%description sql-devel -l pl.UTF-8
+Pliki programistyczne biblioteki db-sql.
+
 %package stl
-Summary:	STL API for Berkeley database library
+Summary:	STL API for Berkeley Database library
+Summary(pl.UTF-8):	API STL dla biblioteki Berkeley Database
 Group:		Libraries
 Provides:	db-stl = %{version}-%{release}
 
 %description stl
 STL API for Berkeley database library.
 
+%description stl -l pl.UTF-8
+API STL dla biblioteki Berkeley Database.
+
 %package stl-devel
 Summary:	Development files for db-stl library
 Summary(pl.UTF-8):	Pliki programistyczne biblioteki db-stl
 Group:		Development/Libraries
-Requires:	%{name}-stl = %{epoch}:%{version}-%{release}
+Requires:	%{name}-stl = %{version}-%{release}
 Provides:	db-stl-devel = %{version}-%{release}
 
 %description stl-devel
 Development files for db-stl library.
 
+%description stl-devel -l pl.UTF-8
+Pliki programistyczne biblioteki db-stl.
+
 %package sqlite3
-Summary:	Sqlite3 API for Berkeley database library
+Summary:	Sqlite3 API for Berkeley Database library
+Summary(pl.UTF-8):	API Sqlite3 dla biblioteki Berkeley Database
 Group:		Libraries
 Provides:	db-sqlite3 = %{version}-%{release}
 
 %description sqlite3
 Sqlite3 API for Berkeley database library.
 
+%description sqlite3 -l pl.UTF-8
+API Sqlite3 dla biblioteki Berkeley Database.
+
 %package sqlite3-devel
 Summary:	Development files for db-sqlite3 library
 Summary(pl.UTF-8):	Pliki programistyczne biblioteki db-sqlite3
 Group:		Development/Libraries
-Requires:	%{name}-sqlite3 = %{epoch}:%{version}-%{release}
+Requires:	%{name}-sqlite3 = %{version}-%{release}
 Provides:	db-sqlite3-devel = %{version}-%{release}
 
 %description sqlite3-devel
 Development files for db-sqlite3 library.
 
+%description sqlite3-devel -l pl.UTF-8
+Pliki programistyczne biblioteki db-sqlite3.
+
 %package utils
 Summary:	Command line tools for managing Berkeley DB databases
 Summary(pl.UTF-8):	Narzędzia do obsługi baz Berkeley DB z linii poleceń
 Group:		Applications/Databases
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Provides:	db-utils = %{version}-%{release}
 Obsoletes:	db-utils
 Obsoletes:	db3-utils
