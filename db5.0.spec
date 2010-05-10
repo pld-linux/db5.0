@@ -295,6 +295,7 @@ Summary:	Command line tools for managing Berkeley DB databases
 Summary(pl.UTF-8):	Narzędzia do obsługi baz Berkeley DB z linii poleceń
 Group:		Applications/Databases
 Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-sql = %{version}-%{release}
 Provides:	db-utils = %{version}-%{release}
 Obsoletes:	db-utils
 Obsoletes:	db3-utils
