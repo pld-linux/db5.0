@@ -14,7 +14,7 @@ Summary:	Berkeley DB database library for C
 Summary(pl.UTF-8):	Biblioteka C do obsługi baz Berkeley DB
 Name:		db5.0
 Version:	%{ver}.%{patchlevel}
-Release:	1
+Release:	1.2
 License:	BSD-like (see LICENSE)
 Group:		Libraries
 Source0:	http://download.oracle.com/berkeley-db/db-%{ver}.tar.gz
@@ -349,11 +349,13 @@ LDFLAGS="%{rpmcflags} %{rpmldflags}"
 export CC CXX CFLAGS CXXFLAGS LDFLAGS
 
 ../dist/%configure \
-	--enable-compat185 \
 	--disable-shared \
 	--enable-static \
-	--enable-posixmutexes \
-	--enable-cxx
+	--enable-compat185 \
+	--enable-cxx \
+	--enable-dbm \
+	--enable-build_dbm \
+	--enable-posixmutexes
 
 # (temporarily?) disabled because of compilation errors:
 #	--enable-dump185 \
@@ -367,18 +369,19 @@ cd build_unix
 ../dist/%configure \
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir} \
+	--enable-shared \
+	--disable-static \
 	--enable-compat185 \
-	--enable-posixmutexes \
 	--enable-cxx \
-	--enable-stl \
+	--enable-dbm \
+	--enable-build_dbm \
+	--enable-posixmutexes \
 	--enable-sql \
 	--enable-sql_compat \
 	--enable-sql_codegen \
-	%{?with_tcl:--enable-tcl} \
-	%{?with_tcl:--with-tcl=/usr/lib} \
+	--enable-stl \
 	%{?with_java:--enable-java} \
-	--disable-static \
-	--enable-shared
+	%{?with_tcl:--enable-tcl --with-tcl=/usr/lib}
 
 %{__make} library_build \
 	TCFLAGS='-I$(builddir) -I%{_includedir}' \
