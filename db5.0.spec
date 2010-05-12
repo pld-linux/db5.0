@@ -14,7 +14,7 @@ Summary:	Berkeley DB database library for C
 Summary(pl.UTF-8):	Biblioteka C do obsługi baz Berkeley DB
 Name:		db5.0
 Version:	%{ver}.%{patchlevel}
-Release:	1.3
+Release:	1.4
 License:	BSD-like (see LICENSE)
 Group:		Libraries
 Source0:	http://download.oracle.com/berkeley-db/db-%{ver}.tar.gz
@@ -445,7 +445,7 @@ done
 cd -
 
 # this should be done by configure, but is not
-sed -i -e 's/if DB_DBM_HSEARCH != 0/if 1/;s/ifdef HAVE_DBM/if 1/' $RPM_BUILD_ROOT%{_includedir}/db.h
+sed -i -e 's/ifdef HAVE_DBM/if DB_DBM_HSEARCH != 0/' $RPM_BUILD_ROOT%{_includedir}/db.h
 
 rm -f examples_c*/tags
 install -d $RPM_BUILD_ROOT%{_examplesdir}/db-%{version}
