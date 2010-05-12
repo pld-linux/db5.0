@@ -20,7 +20,7 @@ Group:		Libraries
 Source0:	http://download.oracle.com/berkeley-db/db-%{ver}.tar.gz
 # Source0-md5:	9a749fd2e98fe15840493ddc34cc66d8
 # %%patchset_source -f http://www.oracle.com/technology/products/berkeley-db/db/update/%{ver}/patch.%{ver}.%g 1 %{patchlevel}
-URL:		http://www.oracle.com/technology/products/berkeley-db/index.html
+URL:		http://www.oracle.com/technology/products/berkeley-db/db/index.html
 BuildRequires:	automake
 %if %{with java}
 BuildRequires:	jdk
