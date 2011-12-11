@@ -21,7 +21,6 @@ Group:		Libraries
 #Source0Download: http://www.oracle.com/technetwork/database/berkeleydb/downloads/index-082944.html
 Source0:	http://download.oracle.com/berkeley-db/db-%{ver}.tar.gz
 # Source0-md5:	b63afbd6ab191d0f19e00927f25d66fe
-# %%patchset_source -f http://download.oracle.com/berkeley-db/patches/db/%{ver}/patch.%{ver}.%g 1 %{patchlevel}
 URL:		http://www.oracle.com/technetwork/database/berkeleydb/downloads/index.html
 BuildRequires:	automake
 %if %{with java}
@@ -291,7 +290,7 @@ Group:		Development/Libraries
 Requires:	%{name}-stl = %{version}-%{release}
 %if %{with default_db}
 Provides:	db-stl-devel = %{version}-%{release}
-Obsoletes:	db-srl-devel
+Obsoletes:	db-stl-devel
 %endif
 
 %description stl-devel
@@ -367,8 +366,6 @@ poleceń.
 
 %prep
 %setup -q -n db-%{ver}
-# official patches
-#%%patchset_patch 1 %{patchlevel}
 
 %build
 cp -f /usr/share/automake/config.sub dist
